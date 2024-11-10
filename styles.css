@@ -122,32 +122,28 @@
   
   /* Navigation Bar */
   nav {
-    background-color: #3445ff;
-    padding: 10px 0;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    background-color: #3d8aef;
+    padding: 10px;
   }
-  
   nav ul {
-    display: inline-flex;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 20px;
   }
-  
   nav ul li {
-    margin: 0 10px;
+    position: relative;
   }
-  
   nav ul li a {
-    color: #fff;
+    color: rgba(255, 255, 255, 0.623);
     text-decoration: none;
-    
-    padding: 8px 12px;
-    border-radius: 5px;
+    padding: 8px 15px;
+    display: block;
   }
-  
-  nav ul li a:hover {
-    background-color: #83a7d5;
+  nav ul li:hover > a {
+    background-color:#306dbd;
+    color: white;
   }
   
   /* Main Content */
@@ -287,7 +283,37 @@ a:hover {
     color: #004a99;
     text-decoration: underline;
 }
+/* drop down*/
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f3f3f3;
+  min-width: 200px;
+  z-index: 1;
+  border-radius: 4px;
+}
+.dropdown a {
+  padding: 10px;
+  color: black;
+  display: block;
+  text-decoration: none;
+}
+.dropdown a:hover {
+  background-color: white;
+}
+nav ul li:hover .dropdown {
+  display: block;
+}
 
+/* Section Display */
+.content-section {
+  display: none;
+}
+.content-section.active {
+  display: block;
+}
 
   
   /* Responsive Design */
