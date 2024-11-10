@@ -1,11 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Page</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 <body>
-    <h1>Welcome to ICACECS!!</h1>
+  <!-- Header with Event Poster -->
+  <header class="header">
+    <img src="./assets/postericacecs.jpg" alt="Event Poster" class="event-poster">
+  </header>
+
+  <!-- Carousel Section -->
+  <section class="carousel">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <!-- Add as many slides as you need -->
+        <div class="swiper-slide"><img src="./assets/main.jpg" alt="Slide 1"></div>
+        <div class="swiper-slide"><img src="./assets/main2.jpg" alt="Slide 2"></div>
+        <div class="swiper-slide"><img src="./assets/main3.jpg" alt="Slide 3"></div>
+      </div>
+      <!-- Add Pagination and Navigation controls -->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </section>
+
+  <!-- Scrolling Text -->
+  <div class="scrolling-text">
+    <div class="scrolling-text-content">
+      All accepted and presented papers will be published in Scopus Indexed Springer Series "Smart Innovation, Systems and Technologies". The conference will be held in Virtual mode.
+    </div>
+  </div>
+  
+  <nav>
+    <ul>
+      <li><a href="javascript:void(0)" onclick="showSection('home')">Home</a></li>
+      <li><a href="javascript:void(0)" onclick="showSection('call-for-paper')">Call For Paper</a></li>
+      <li><a href="javascript:void(0)" onclick="showSection('programme-schedule')">Programme Schedule</a></li>
+      <li><a href="javascript:void(0)" onclick="showSection('committees')">Committees</a></li>
+      <li><a href="javascript:void(0)" onclick="showSection('registration')">Registration</a></li>
+      <li><a href="javascript:void(0)" onclick="showSection('contact-us')">Contact Us</a></li>
+      <li><a href="javascript:void(0)" onclick="showSection('previous-conferences')">Previous Conferences</a></li>
+    </ul>
+  </nav>
+  <main id="home" class="home-content-section">
+    <section class="home-intro">
+        <h2>About ICACECS 2024</h2>
+        <p>The Department of Computer Science & Engineering, VNR VJIET, has successfully organized the International Conference on Advances in Computer Engineering and Communication Systems (ICACECS) annually since 2020, in collaboration with Springer Nature International and Computer Society of India (CSI).</p>
+        <p>This year, ICACECS 2024 is scheduled for 8th & 9th August 2024, co-located at THE UNIVERSITY OF THE WEST INDIES (UWI), at Mona, Jamaica.</p>
+    </section>
+
+    <section class="home-co-hosts">
+        <h2>Co-Hosts</h2>
+        <h3 class="home-co-host-uwi">The University of the West Indies (UWI), Mona, Jamaica</h3>
+        <p class="home-co-host-uwi-desc">The founding campus of the unique, multi-part, multi-national University of the West Indies, UWI Mona is the premier educational institution in the region, with extensive undergraduate, masters, and doctoral programs.</p>
+
+        <h3 class="home-co-host-mbu">Mohan Babu University, Tirupati, India</h3>
+        <p class="home-co-host-mbu-desc">Mohan Babu University promotes excellence across diverse fields, fostering talent for future-ready careers. The university emphasizes academic brilliance and prepares students to excel in companies like Google and Amazon.</p>
+    </section>
+
+    <section class="home-topics">
+        <h2>Call for Papers</h2>
+        <p>Authors are invited to submit their research contributions in:</p>
+        <ul class="home-topics-list">
+            <li>Artificial Intelligence and Machine Learning</li>
+            <li>Natural Language Processing and Smart Systems</li>
+            <li>Networks and Communication Systems</li>
+            <li>Quantum Computing, Knowledge Engineering, and Ontology</li>
+            <li>Internet of Things, Education Technology, and Business Engineering</li>
+        </ul>
+        <p>This forum connects researchers worldwide, offering a roadmap for transforming the research landscape globally.</p>
+    </section>
+
+    <section class="home-vnrvjiet">
+        <h2>About VNR VJIET</h2>
+        <p>Established in 1995, Vallurupalli Nageswara Rao Vignana Jyothi Institute of Engineering and Technology (VNRVJIET) is a premier institution known for academic and research excellence in Telangana.</p>
+        <p>VNRVJIET excels in:</p>
+        <ul class="home-vnrvjiet-list">
+            <li>Producing skilled engineers at undergraduate and postgraduate levels</li>
+            <li>Conducting groundbreaking fundamental research</li>
+            <li>Encouraging innovation, societal impact, and revenue generation through new products</li>
+        </ul>
+    </section>
+
+    <section class="home-cse-department">
+        <h2>Our Department - CSE</h2>
+        <p>Founded in 1995, the Department of Computer Science and Engineering at VNRVJIET focuses on advancing computing and its applications to build intellectual capital.</p>
+        <p>CSE offers programs in:</p>
+        <ul class="home-cse-department-list">
+            <li>Bachelor's in Computer Science and Engineering</li>
+            <li>Bachelor's in Computer Science and Business Systems (CSBS) with TCS</li>
+            <li>Master's in Software Engineering (SE)</li>
+            <li>Master's in Computer Science Engineering (CSE)</li>
+        </ul>
+        <p>Equipped with advanced labs and dedicated faculty, the department conducts pioneering research with a focus on global excellence and local relevance.</p>
+        <p>For more information, visit us at <a href="http://www.vnrvjiet.ac.in/cse.php" target="_blank" class="home-cse-department-link">www.vnrvjiet.ac.in/cse.php</a></p>
+    </section>
+
+    <section id="call-for-paper" class="home-call-for-paper">
+        <h2>Call For Paper</h2>
+        <p>Details for Call For Paper go here.</p>
+    </section>
+
+    <section id="programme-schedule" class="home-programme-schedule">
+        <h2>Programme Schedule</h2>
+        <p>Programme schedule details go here.</p>
+    </section>
+
+    <section id="committees" class="home-committees">
+        <h2>Committees</h2>
+        <p>Information about committees goes here.</p>
+    </section>
+
+    <section id="registration" class="home-registration">
+        <h2>Registration</h2>
+        <p>Registration details go here.</p>
+    </section>
+
+    <section id="contact-us" class="home-contact-us">
+        <h2>Contact Us</h2>
+        <p>Contact information goes here.</p>
+    </section>
+
+    <section id="previous-conferences" class="home-previous-conferences">
+        <h2>Previous Conferences</h2>
+        <p>Details of previous conferences go here.</p>
+    </section>
+</main>
+
+
+  <!-- Footer -->
+ 
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 ICACECS Conference | VNRVJIET - Department of Computer Science & Engineering</p>
+  </footer>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // Initialize Swiper
+    const swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1, // Only one slide visible at a time
+      spaceBetween: 300, // Large space between slides to prevent overlap
+      loop: true, // Enable continuous loop mode
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
 </body>
 </html>
