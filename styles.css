@@ -331,3 +331,10 @@ nav ul li:hover .dropdown {
     }
   }
   
+  .content-section {
+    display: none;
+  }
+  
+  .content-section.active {
+    display: block;
+  }
