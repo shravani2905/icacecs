@@ -1,10 +1,17 @@
 function showSection(sectionId) {
-    const sections = document.querySelectorAll('.content-section');
-    sections.forEach(section => {
+  // Select all elements with the 'content-section' class
+  const sections = document.querySelectorAll('.content-section');
+  
+  // Loop through each section and remove the 'active' class
+  sections.forEach(section => {
       section.classList.remove('active');
-    });
-    const sectionToShow = document.getElementById(sectionId);
-    if (sectionToShow) {
+  });
+
+  // Get the section to show using the provided sectionId
+  const sectionToShow = document.getElementById(sectionId);
+
+  // If the section exists, add the 'active' class to it
+  if (sectionToShow) {
       sectionToShow.classList.add('active');
-    }
   }
+}

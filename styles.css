@@ -1,340 +1,179 @@
 /* Reset and Base Styling */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Adjust header height */
+.header {
+  height: 200px; /* Set to the desired height */
+  overflow: hidden; /* Hide any overflow from the image */
+  position: relative;
+}
+
+.header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the header area without distortion */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
   
-  body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-  }
+}
+
+/* Header with Event Poster */
+.header {
+  display: block;
+  margin: auto;
+  max-width: 1000px;
   
-  /* Header with Event Poster */
-  .header {
-    display: flex;
     justify-content: center;
     align-items: center;
- background-color: #f0f0f0;
    
-  }
-  
-  .event-poster {
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    border-radius: 5px;
-  }
-  
-  /* Carousel */
+
+}
+
+.event-poster {
+  width: 100%;
+  max-width: 850px;
+  height: auto;
+  border-radius: 5px;
+}
+/* Header with Event Poster */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  position: relative; /* Added position for z-index control */
+  z-index: 10; /* Ensure header stays above other content */
+}/* Header with Event Poster */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  position: relative;
+  z-index: 10;
+}
+
 /* Carousel */
 .carousel {
-    background-color: #f0f0f0;
-    padding: 10px;
-  }
-  /* Swiper Container */
-.swiper-container {
-    width: 80%; /* Adjusts container width */
-    max-width: 800px;
-    margin: 0 auto; /* Centers container horizontally */
-    position: relative; /* Positions arrows relative to the container */
-  }
   
-  /* Centered Images in Carousel */
-  .swiper-slide img {
-    width: 100%; /* Full width within swiper container */
-    height: 400px;
-    object-fit: cover; /* Ensures images are fully displayed without stretching */
-    border-radius: 5px; /* Optional styling */
-  }
-  /* Centered Navigation Arrows */
+  padding: 10px;
+  position: relative;
+  z-index: 5;
+}
+
+/* Swiper Container */
+.swiper-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Centered Images in Carousel */
+.swiper-slide {
+  width: 100%;
+  height: 500px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0s 0.5s; /* Smooth transition */
+}
+
+.swiper-slide-active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease, visibility 0s 0s; /* Instant visibility change */
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Centered Navigation Arrows */
 .swiper-button-next,
 .swiper-button-prev {
-  color: white; /* Icon color */
-  top: 30%;
+  color: white;
+  top: 50%;
   transform: translateY(-50%);
   width: 45px;
   height: 45px;
- /* Background color */
-  border-radius: 50%; /* Round shape */
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Adds shadow */
-  transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, transform 0.2s;
   cursor: pointer;
-}
-
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  
-  color:white;/* Slightly lighter background on hover */
-  transform: translateY(-50%) scale(1.1); /* Scale up on hover for a "pop" effect */
+  z-index: 2;
 }
 
 .swiper-button-next {
-  right: 15px; /* Adjust positioning */
+  right: 15px;
 }
 
 .swiper-button-prev {
-  left: 15px; /* Adjust positioning */
+  left: 15px;
 }
 
-/* Optional: Customize Arrow Icons */
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  font-size: 18px; /* Adjust icon size */
-  font-weight: bold;
+/* Pagination Bullet Styling */
+.swiper-pagination-bullet-active {
+  background-color: #cecece;
 }
 
-  /* Pagination Bullet Styling */
-  .swiper-pagination-bullet-active {
-    background-color: #cecece;
-  }
-  /* Scrolling Text Container */
 .scrolling-text {
-    background-color: #da3c3c; /* Red background */
-    color: #ffffff; /* White text color */
-    font-size: 1em;
-    overflow: hidden; /* Hide overflow */
-    white-space: nowrap;
-    padding: 10px 0;
-    position: relative;
-    width: 100%; /* Ensure it spans the full width */
-  }
-  
-  /* Scrolling Text Content */
-  .scrolling-text-content {
-    display: inline-block;
-    padding-left: 5%; /* Start the text off-screen to the right */
-    animation: scroll-text 30s linear infinite; /* Set the scrolling animation */
-  }
-  
-  /* Keyframes for scrolling text */
-  @keyframes scroll-text {
-    0% {
-      transform: translateX(100%); /* Start from the right */
-    }
-    100% {
-      transform: translateX(-100%); /* Move to the left */
-    }
-  }
-  
-  /* Navigation Bar */
-  nav {
-    display: flex;
-    justify-content: center;
-    background-color: #3d8aef;
-    padding: 10px;
-  }
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  nav ul li {
-    position: relative;
-  }
-  nav ul li a {
-    color: rgba(255, 255, 255, 0.623);
-    text-decoration: none;
-    padding: 8px 15px;
-    display: block;
-  }
-  nav ul li:hover > a {
-    background-color:#306dbd;
-    color: white;
-  }
-  
-  /* Main Content */
-  main {
-    padding: 20px;
-  }
-  
-  .content-section {
-    display: none;
-  }
-  
-  .content-section.active {
-    display: block;
-  }
-  
-  /* Footer */
-  footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-  }
-  
-  footer p {
-    margin: 0;
-  }
-
-  /* Main Container */
-#home {
-    padding: 2rem;
-    font-family: Arial, sans-serif;
-    color: #333;
-    background-color: #f9f9f9;
+  background-color: #da3c3c;
+  color: #ffffff;
+  font-size: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px 0;
+  position: relative;
+  width: 100%;
 }
 
-/* Section Headings */
-#home h2 {
-    font-size: 1.8rem;
-    color: #0056b3;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #0056b3;
-    padding-bottom: 0.5rem;
-    font-weight: bold;
+.scroll-text-content {
+  display: inline-block;
+  padding-left: 5%;
+  animation: scroll-text 30s linear infinite;
 }
 
-/* General Paragraph Styling */
-#home p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #444;
-    margin-bottom: 1rem;
-}
-
-/* Section-Specific Styling */
-.home-intro, .home-co-hosts, .home-topics, .home-vnrvjiet, .home-cse-department, .home-call-for-paper, .home-programme-schedule, .home-committees, .home-registration, .home-contact-us, .home-previous-conferences {
-    margin-bottom: 2.5rem;
-    padding: 1.5rem;
-    border-radius: 8px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Home Intro Styling */
-.home-intro h2 {
-    color: #006bb3;
-}
-.home-intro p {
-    font-size: 1rem;
-    color: #555;
-}
-
-/* Co-Hosts Styling */
-.home-co-hosts h3 {
-    font-size: 1.4rem;
-    color: #004a8b;
-    margin-top: 1.5rem;
-}
-.home-co-hosts p {
-    color: #666;
-}
-
-/* Topics Section */
-.home-topics-list {
-    list-style: disc;
-    padding-left: 1.5rem;
-}
-.home-topics-list li {
-    margin-bottom: 0.5rem;
-    color: #005792;
-}
-
-/* VNR VJIET Section */
-.home-vnrvjiet-list {
-    list-style: square;
-    padding-left: 1.5rem;
-    color: #555;
-}
-.home-vnrvjiet-list li {
-    margin-bottom: 0.5rem;
-}
-
-/* CSE Department Section */
-.home-cse-department-list {
-    list-style-type: circle;
-    padding-left: 1.5rem;
-}
-.home-cse-department-list li {
-    margin-bottom: 0.5rem;
-}
-.home-cse-department-link {
-    color: #0056b3;
-    text-decoration: underline;
-}
-.home-cse-department-link:hover {
-    color: #003d73;
-}
-
-/* Call For Paper Section */
-#call-for-paper .home-call-for-paper h2 {
-    color: #006bb3;
-}
-#call-for-paper .home-call-for-paper p {
-    color: #444;
-}
-
-/* Programme Schedule, Committees, Registration, Contact Us, Previous Conferences */
-.home-programme-schedule, .home-committees, .home-registration, .home-contact-us, .home-previous-conferences {
-    color: #333;
-}
-
-/* Link Styles */
-a {
-    color: #0066cc;
-    text-decoration: none;
-}
-a:hover {
-    color: #004a99;
-    text-decoration: underline;
-}
-/* drop down*/
-.dropdown {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #f3f3f3;
-  min-width: 200px;
-  z-index: 1;
-  border-radius: 4px;
-}
-.dropdown a {
-  padding: 10px;
-  color: black;
-  display: block;
-  text-decoration: none;
-}
-.dropdown a:hover {
-  background-color: white;
-}
-nav ul li:hover .dropdown {
-  display: block;
-}
-
-/* Section Display */
-.content-section {
-  display: none;
-}
-.content-section.active {
-  display: block;
-}
-
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .swiper-container {
-      width: 90%; /* Slightly smaller width on mobile */
-    }
-  
-    .navigation ul {
-      flex-direction: column; /* Stacks items vertically on small screens */
-    }
-  
-    .scrolling-text {
-      font-size: 1em; /* Slightly smaller text on mobile */
-    }
+@keyframes scroll-text {
+  0% {
+    transform: translateX(100%);
   }
-  
-  .content-section {
-    display: none;
+  100% {
+    transform: translateX(-100%);
   }
-  
-  .content-section.active {
-    display: block;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .swiper-container {
+    width: 90%; /* Slightly smaller width on mobile */
   }
+
+  .swiper-slide {
+    height: 300px; /* Adjust height for smaller screens */
+  }
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+footer p {
+  margin: 0;
+}
