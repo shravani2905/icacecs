@@ -173,15 +173,26 @@ body {
     height: 300px; /* Adjust height for smaller screens */
   }
 }
-
-/* Footer */
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px 0;
 }
-
-footer p {
+.footer a {
+  color: #0a84ff;
+  text-decoration: none;
+}
+.footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+.footer h6 {
+  font-weight: bold;
+}
+.footer p {
   margin: 0;
+}
+.footer .copyright {
+  text-align: center;
+  padding-top: 10px;
 }
