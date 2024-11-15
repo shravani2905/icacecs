@@ -59,19 +59,18 @@ body {
   position: relative;
   z-index: 10;
 }
-
 /* Carousel */
 .carousel {
-  
   padding: 10px;
   position: relative;
   z-index: 5;
+  /* Optional: Add some border radius or shadow for aesthetic purposes */
 }
 
 /* Swiper Container */
 .swiper-container {
   width: 100%;
-  max-width: 800px;
+  max-width: 900px; /* Maximum width for the carousel */
   margin: 0 auto;
   position: relative;
 }
@@ -79,11 +78,33 @@ body {
 /* Centered Images in Carousel */
 .swiper-slide {
   width: 100%;
-  height: 500px;
+  height: 600px; /* Set a fixed height for the rectangle */
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s ease, visibility 0s 0.5s; /* Smooth transition */
+  display: flex;
+  justify-content: center; /* Center image horizontally */
+  align-items: center; /* Center image vertically */
 }
+
+.swiper-slide img {
+  width: 100%; /* Make image take the full width of the container */
+  height: 100%; /* Make image take the full height of the container */
+  object-fit: cover; /* Compress the image to fit the container without distorting */
+  object-position: center; /* Keep the image centered in case of cropping */
+}
+
+/* Optional: Make the carousel responsive */
+@media (max-width: 768px) {
+  .swiper-container {
+    max-width: 100%;
+  }
+
+  .swiper-slide {
+    height: 300px; /* Adjust height for smaller screens */
+  }
+}
+
 
 .swiper-slide-active {
   opacity: 1;
@@ -135,6 +156,15 @@ body {
   position: relative;
 }
 
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block; /* Show dropdown on hover */
+  margin-top: 0;  /* Adjust dropdown position if necessary */
+}
+
+.dropdown-menu {
+  display: none;
+  /* Ensure dropdown is hidden by default */
+}
 .scrolling-content {
   display: inline-block;
   padding-left: 100%; /* Start the text off-screen to the right */
@@ -143,6 +173,128 @@ body {
   color: #ffffff;
 }
 
+.call-for-papers-section {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.call-for-papers-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.call-for-papers-description {
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+.author-guidelines-title,
+.submission-title,
+.template-links-title,
+.conference-tracks-title {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.author-guidelines-list {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.submission-links,
+.template-links {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.template-links-list {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.template-links-list li {
+  margin-bottom: 10px;
+}
+
+.template-links-list li a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.template-links-list li a:hover {
+  text-decoration: underline;
+}
+
+.border-bottom {
+  border-bottom: 2px solid #007bff;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.icacecs-links {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.icacecs-links a {
+  display: block;
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.icacecs-links a:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+.programme-schedule-list {
+  list-style-type: none; /* Removes bullet points */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
+}
+
+.programme-schedule-list li {
+  margin-bottom: 10px; /* Adds spacing between items */
+}
+
+.programme-schedule-list a {
+  text-decoration: none; /* Removes underline from links */
+  color: #007bff; /* Sets link color */
+  font-weight: bold; /* Makes the text bold */
+}
+
+.programme-schedule-list a:hover {
+  text-decoration: underline; /* Adds underline on hover */
+  color: #0056b3; /* Darkens link color on hover */
+}
+.terms-title-container {
+  width: 100%;
+  border-bottom: 2px solid #787878;
+  margin-bottom: 20px;
+}
+
+.terms-title {
+  text-align: center;
+}
+.terms-title {
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #787878;
+  box-sizing: border-box; /* Include border in the width calculation */
+}
 /* Animation for smooth scrolling effect */
 @keyframes scroll-left {
   0% {
