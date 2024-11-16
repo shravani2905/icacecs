@@ -4,27 +4,16 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* Adjust header height */
 .header {
-  height: 200px; /* Set to the desired height */
-  overflow: hidden; /* Hide any overflow from the image */
   position: relative;
+  overflow: hidden; /* Ensure no content overflows */
 }
 
-html, body {
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-}
+/* Make the image cover the width of the header while keeping its aspect ratio */
 .header img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures the image covers the header area without distortion */
-}
-
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  overflow-x: hidden;
-  
+  width: 100%; /* Full width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensures the entire image fits within the container */
 }
 
 /* Header with Event Poster */
@@ -36,46 +25,22 @@ body {
     justify-content: center;
     align-items: center;
    
-
 }
 
-.event-poster {
-  width: 100%;
-  max-width: 850px;
-  height: auto;
-  border-radius: 5px;
-}
-/* Header with Event Poster */
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f0f0f0;
-  position: relative; /* Added position for z-index control */
-  z-index: 10; /* Ensure header stays above other content */
-}/* Header with Event Poster */
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f0f0f0;
-  position: relative;
-  z-index: 10;
-}
-/* Carousel */
+
+/* Carousel Styling */
 .carousel {
   padding: 10px;
   position: relative;
   z-index: 5;
-  /* Optional: Add some border radius or shadow for aesthetic purposes */
   overflow: hidden; /* Prevent overflow from child elements */
 }
 
 /* Swiper Container */
 .swiper-container {
+  max-width: 700px;
   width: 100%;
-  width: 900px;
-  height: 600px;
+  height: 600px; /* Adjust height as per your preference */
   max-width: 100%; /* Ensure it doesn't exceed the viewport */
   margin: 0 auto;
   position: relative;
@@ -84,72 +49,101 @@ body {
 
 /* Centered Images in Carousel */
 .swiper-slide {
+ 
   width: 100%;
-  height: 600px; /* Set a fixed height for the rectangle */
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s ease, visibility 0s 0.5s; /* Smooth transition */
+  height: 100%; /* Allow slide to adjust based on the container's height */
   display: flex;
   justify-content: center; /* Center image horizontally */
   align-items: center; /* Center image vertically */
 }
 
 .swiper-slide img {
-  width: 100%; /* Make image take the full width of the container */
-  height: 100%; /* Make image take the full height of the container */
-  object-fit: cover; /* Compress the image to fit the container without distorting */
-  object-position: center; /* Keep the image centered in case of cropping */
-  display: block; /* Ensure the image behaves as a block element */
-  border-radius: 5px; /* Optional: Add some border radius */
+ 
+  width: 100%; /* Ensure image takes full width */
+  height: 100%; /* Ensure image takes full height */
+  object-fit: cover; /* Maintain aspect ratio and cover the area */
+  object-position: center; /* Center image in case of cropping */
+  display: block;
+  border-radius: 5px; /* Optional: Add a border radius for aesthetic purposes */
 }
 
-/* Optional: Make the carousel responsive */
-
-
-
-.swiper-slide-active {
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.5s ease, visibility 0s 0s; /* Instant visibility change */
-}
-
-.swiper-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 5px;
-}
-
-/* Centered Navigation Arrows */
+/* Swiper Navigation Arrows */
 .swiper-button-next,
 .swiper-button-prev {
-  color: rgb(255, 255, 255);
+  color: #fff; /* Ensure arrow icons are visible */
   top: 50%;
   transform: translateY(-50%);
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
+  width: 5px; /* Smaller size for arrows */
+  height: 5px;
+  border-radius: 50%; /* Circular buttons */
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow */
   transition: background-color 0.3s, transform 0.2s;
   cursor: pointer;
   z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5); /* Add a background for contrast */
 }
 
 .swiper-button-next {
-  right: 15px;
+  right: 10px; /* Position next button */
 }
 
 .swiper-button-prev {
-  left: 15px;
+  left: 10px; /* Position prev button */
+}
+
+/* Hover Effect for Arrows */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  transform: translateY(-50%) scale(1.1); /* Slightly enlarge on hover */
+  background-color: rgba(255, 255, 255, 0.7); /* Lighten the background */
+  color: #000; /* Change color for visibility */
 }
 
 /* Pagination Bullet Styling */
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent bullets */
+  transition: background-color 0.3s;
+}
+
 .swiper-pagination-bullet-active {
-  background-color: #cecece;
-}/* Scrolling Text */
+  background-color: #fff; /* Active bullet is fully opaque */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .swiper-container {
+    height: 400px; /* Adjust height for smaller screens */
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 10px; /* Smaller arrows for smaller screens */
+    height: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .swiper-container {
+    height: 300px; /* Adjust height for mobile devices */
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 5px; /* Even smaller arrows for very small screens */
+    height: 5px;
+  }
+
+  .swiper-slide img {
+    object-fit: contain; /* Ensure image fits on small screens without cropping */
+  }
+}
+
+
 .scrolling-container {
   overflow: hidden;
   white-space: nowrap;
