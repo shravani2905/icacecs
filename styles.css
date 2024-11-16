@@ -183,7 +183,7 @@ body {
 }
 
 .call-for-papers-title {
-  text-align: center;
+
   color: #333;
   margin-bottom: 20px;
 }
@@ -192,8 +192,18 @@ body {
   text-align: justify;
   margin-bottom: 20px;
 }
-
-.author-guidelines-title,
+.visitor-heading {
+  color: #006400;
+}
+.visitor-counter-container {
+  font-size: 14px;
+  color: #006400;
+  margin-top: 20px;
+}
+.author-guidelines-title{
+  color: #007bff;
+  margin-bottom: 20px;
+}
 .submission-title,
 .template-links-title,
 .conference-tracks-title {
