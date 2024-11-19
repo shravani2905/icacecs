@@ -20,14 +20,12 @@
 .header {
   display: block;
   margin: auto;
-  max-width: 1000px;
+  max-width: 1500px;
   
     justify-content: center;
     align-items: center;
    
 }
-
-
 /* Carousel Styling */
 .carousel {
   padding: 10px;
@@ -35,113 +33,94 @@
   z-index: 5;
   overflow: hidden; /* Prevent overflow from child elements */
 }
-
 /* Swiper Container */
 .swiper-container {
-  max-width: 700px;
   width: 100%;
-  height: 600px; /* Adjust height as per your preference */
-  max-width: 100%; /* Ensure it doesn't exceed the viewport */
+  height: auto;
+  max-width: 1000px; /* Optional: Limit maximum width */
   margin: 0 auto;
+  overflow: hidden; /* Hide overflow to prevent next/previous images from showing */
   position: relative;
-  box-sizing: border-box; /* Prevent content from overflowing */
 }
 
-/* Centered Images in Carousel */
-.swiper-slide {
- 
-  width: 100%;
-  height: 100%; /* Allow slide to adjust based on the container's height */
+/* Swiper Wrapper */
+.swiper-wrapper {
   display: flex;
-  justify-content: center; /* Center image horizontally */
-  align-items: center; /* Center image vertically */
+  transition: transform 0.3s ease-in-out; /* Smooth slide transition */
 }
 
+/* Swiper Slide */
+.swiper-slide {
+  flex-shrink: 0; /* Prevent slides from shrinking */
+  width: 100%; /* Ensure each slide takes full container width */
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Centered and Responsive Images */
 .swiper-slide img {
- 
-  width: 100%; /* Ensure image takes full width */
-  height: 100%; /* Ensure image takes full height */
-  object-fit: cover; /* Maintain aspect ratio and cover the area */
-  object-position: center; /* Center image in case of cropping */
+  width: 100%; /* Full width of the slide */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure images fill their container */
   display: block;
-  border-radius: 5px; /* Optional: Add a border radius for aesthetic purposes */
+  border-radius: 5px; /* Optional: Add rounded corners */
 }
 
-/* Swiper Navigation Arrows */
+/* Navigation Buttons */
 .swiper-button-next,
 .swiper-button-prev {
-  color: #fff; /* Ensure arrow icons are visible */
+  color: #fff;
   top: 50%;
   transform: translateY(-50%);
-  width: 5px; /* Smaller size for arrows */
-  height: 5px;
-  border-radius: 50%; /* Circular buttons */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow */
-  transition: background-color 0.3s, transform 0.2s;
-  cursor: pointer;
-  z-index: 2;
-  background-color: rgba(0, 0, 0, 0.5); /* Add a background for contrast */
+  z-index: 10;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.swiper-button-next {
-  right: 10px; /* Position next button */
-}
-
-.swiper-button-prev {
-  left: 10px; /* Position prev button */
-}
-
-/* Hover Effect for Arrows */
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  transform: translateY(-50%) scale(1.1); /* Slightly enlarge on hover */
-  background-color: rgba(255, 255, 255, 0.7); /* Lighten the background */
-  color: #000; /* Change color for visibility */
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #000;
+  transform: translateY(-50%) scale(1.1);
 }
 
-/* Pagination Bullet Styling */
+/* Pagination Bullets */
 .swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
-  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent bullets */
-  transition: background-color 0.3s;
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.7);
+  transition: background-color 0.3s ease;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #fff; /* Active bullet is fully opaque */
+  background-color: #fff;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .swiper-container {
-    height: 400px; /* Adjust height for smaller screens */
-  }
-
-  .swiper-button-next,
-  .swiper-button-prev {
-    width: 10px; /* Smaller arrows for smaller screens */
-    height: 10px;
+    max-width: 90%;
   }
 }
 
 @media (max-width: 576px) {
   .swiper-container {
-    height: 300px; /* Adjust height for mobile devices */
-  }
-
-  .swiper-button-next,
-  .swiper-button-prev {
-    width: 5px; /* Even smaller arrows for very small screens */
-    height: 5px;
+    height: auto;
   }
 
   .swiper-slide img {
-    object-fit: contain; /* Ensure image fits on small screens without cropping */
+    object-fit: contain; /* Prevent cropping on small screens */
   }
 }
+
 
 
 .scrolling-container {
