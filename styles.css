@@ -85,23 +85,60 @@
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+.swiper-container .swiper-button-next,
+.swiper-container .swiper-button-prev {
+  width: 40px; /* Default size for larger screens */
+  height: 40px;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff; /* Ensure arrow icons are visible */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px; /* Default size for large screens */
+  height: 40px;
+  border-radius: 50%; /* Circular buttons */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow */
+  transition: background-color 0.3s, transform 0.2s;
+  cursor: pointer;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5); /* Add a background for contrast */
+}
+
+.swiper-button-next {
+  right: 10px; /* Position next button */
+}
+
+.swiper-button-prev {
+  left: 10px; /* Position prev button */
+}
+
+/* Hover Effect for Arrows */
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #000;
-  transform: translateY(-50%) scale(1.1);
+  transform: translateY(-50%) scale(1.1); /* Slightly enlarge on hover */
+  background-color: rgba(255, 255, 255, 0.7); /* Lighten the background */
+  color: #000; /* Change color for visibility */
 }
 
-/* Pagination Bullets */
-.swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: rgba(255, 255, 255, 0.7);
-  transition: background-color 0.3s ease;
+/* Responsive Adjustments for Navigation Arrows */
+@media (max-width: 768px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 30px; /* Smaller arrows for tablets */
+    height: 30px;
+  }
 }
 
-.swiper-pagination-bullet-active {
-  background-color: #fff;
+@media (max-width: 576px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 5px; /* Even smaller arrows for mobile devices */
+    height:5px;
+  }
 }
 
 /* Responsive Adjustments */
