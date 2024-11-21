@@ -1,19 +1,23 @@
 function showSection(sectionId) {
-  // Select all elements with the 'content-section' class
-  const sections = document.querySelectorAll('.content-section');
-  
-  // Loop through each section and remove the 'active' class
-  sections.forEach(section => {
+  // Remove active class from all sections
+  document.querySelectorAll('.content-section').forEach(section => {
       section.classList.remove('active');
   });
 
-  // Get the section to show using the provided sectionId
-  const sectionToShow = document.getElementById(sectionId);
+  // Add active class to the selected section
+  const targetSection = document.getElementById(sectionId);
+  if (targetSection) {
+      targetSection.classList.add('active');
+  }
 
-  // If the section exists, add the 'active' class to it
-  if (sectionToShow) {
-      sectionToShow.classList.add('active');
+  // Remove active class from all nav links
+  document.querySelectorAll('.nav-link').forEach(link => {
+      link.classList.remove('active');
+  });
+
+  // Add active class to the clicked nav link
+  const activeLink = document.querySelector(`.nav-link[onclick="showSection('${sectionId}')"]`);
+  if (activeLink) {
+      activeLink.classList.add('active');
   }
 }
-
-

@@ -166,6 +166,10 @@
   width: 100%;
   position: relative;
 }
+.nav-link.active {
+  color: white !important; /* Set the text color to white */
+   /* Optional: Highlight with a background color */
+}
 
 .nav-item.dropdown:hover .dropdown-menu {
   display: block; /* Show dropdown on hover */
